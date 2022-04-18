@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { styled, alpha } from '@mui/material/styles';
-import { AppBar, Badge, Box, IconButton, InputBase, Menu, MenuItem, Toolbar, Typography } from '@mui/material';
-import { AccountCircle, Mail, More, Notifications, SearchOutlined } from '@mui/icons-material';
+import { AppBar, Avatar, Badge, Box, IconButton, InputBase, Menu, MenuItem, Toolbar, Typography } from '@mui/material';
+import { AccountCircle, Mail, More, MoreVertOutlined, Notifications, SearchOutlined } from '@mui/icons-material';
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -101,11 +101,11 @@ export default function Navbar() {
             open={isMobileMenuOpen}
             onClose={handleMobileMenuClose}
         >
-            <MenuItem sx={{p: 1}}>
+            <MenuItem sx={{ px: 1, py: 0.5 }}>
                 <IconButton
-                    sx={{mr: 1}} 
-                    size="medium" 
-                    aria-label="show 4 new mails" 
+                    sx={{ mr: 1 }}
+                    size="medium"
+                    aria-label="show 4 new mails"
                     color="inherit"
                 >
                     <Badge badgeContent={4} color="error">
@@ -114,9 +114,9 @@ export default function Navbar() {
                 </IconButton>
                 <Typography variant='body1'>Messages</Typography>
             </MenuItem>
-            <MenuItem sx={{p: 1}}>
+            <MenuItem sx={{ px: 1, py: 0.5 }}>
                 <IconButton
-                    sx={{mr: 1}}
+                    sx={{ mr: 1 }}
                     size="medium"
                     aria-label="show 12 new notifications"
                     color="inherit"
@@ -127,9 +127,9 @@ export default function Navbar() {
                 </IconButton>
                 <Typography variant='body1'>Notifications</Typography>
             </MenuItem>
-            <MenuItem onClick={handleProfileMenuOpen} sx={{p: 1}}>
+            <MenuItem onClick={handleProfileMenuOpen} sx={{ px: 1, py: 0.5 }}>
                 <IconButton
-                    sx={{mr: 1}}
+                    sx={{ mr: 1 }}
                     size="medium"
                     aria-label="account of current user"
                     aria-controls="primary-search-account-menu"
@@ -146,12 +146,7 @@ export default function Navbar() {
     return (
         <Box>
             <AppBar>
-                <Toolbar
-                    sx={{
-                        display: 'flex',
-                        justifyContent: 'space-between'
-                    }}
-                >
+                <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
                     <Typography
                         variant="h5"
                         noWrap
@@ -192,7 +187,11 @@ export default function Navbar() {
                             onClick={handleProfileMenuOpen}
                             color="inherit"
                         >
-                            <AccountCircle />
+                            <Avatar
+                                sx={{width: 36, height: 36}}
+                                src='https://randomuser.me/api/portraits/men/24.jpg' 
+                                alt='John Doe' 
+                            />
                         </IconButton>
                     </Box>
                     <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
@@ -204,7 +203,7 @@ export default function Navbar() {
                             onClick={handleMobileMenuOpen}
                             color="inherit"
                         >
-                            <More />
+                            <MoreVertOutlined />
                         </IconButton>
                     </Box>
                 </Toolbar>
