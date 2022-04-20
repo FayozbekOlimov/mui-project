@@ -12,13 +12,13 @@ const App = () => {
 		<>
 			<Navbar />
 			<Grid container>
-				<Grid item sm={2} xs={2}>
+				<Grid item width={200} pr={1}>
 					<Leftbar />
 				</Grid>
-				<Grid item sm={7} xs={10}>
+				<Grid item sx={{ width: 'calc(100% - 500px)', borderLeft: '1px solid #bdbdbd', borderRight: '1px solid #bdbdbd' }} px={1}>
 					<Feed />
 				</Grid>
-				<Grid item sm={3} xs={0}>
+				<Grid item width={300} px={1}>
 					<Rightbar />
 				</Grid>
 			</Grid>

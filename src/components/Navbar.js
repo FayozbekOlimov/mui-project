@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { styled, alpha } from '@mui/material/styles';
 import { AppBar, Avatar, Badge, Box, IconButton, InputBase, Menu, MenuItem, Toolbar, Typography } from '@mui/material';
-import { AccountCircle, Mail, More, MoreVertOutlined, Notifications, SearchOutlined } from '@mui/icons-material';
+import { AccountCircle, Mail, MoreVertOutlined, Notifications, SearchOutlined } from '@mui/icons-material';
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',

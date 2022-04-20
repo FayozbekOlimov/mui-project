@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Box, Fab, FormControl, FormControlLabel, FormLabel, Modal, Radio, RadioGroup, TextField, Tooltip, Typography } from '@mui/material'
+import { Box, Button, Fab, FormControl, FormControlLabel, FormLabel, Modal, Radio, RadioGroup, Stack, TextField, Tooltip } from '@mui/material'
 import AddIcon from '@mui/icons-material/Add';
 
 export const Add = () => {
@@ -11,7 +11,7 @@ export const Add = () => {
         left: '50%',
         transform: 'translate(-50%, -50%)',
         width: {
-            xs: '100%',
+            xs: '90%',
             sm: 400
         },
         bgcolor: 'background.paper',
@@ -22,7 +22,8 @@ export const Add = () => {
     return (
         <>
             <Tooltip
-                title='Add'
+                title='Create Post'
+                arrow
                 sx={{
                     position: 'fixed',
                     bottom: 20,
@@ -59,23 +60,27 @@ export const Add = () => {
                         fullWidth
                         sx={{ mb: 2 }}
                     />
-                    <FormControl>
+                    <FormControl sx={{width: '100%'}}>
                         <FormLabel id="demo-col-radio-buttons-group-label" color='info'>Who can comment?</FormLabel>
                         <RadioGroup
-                            col
+                            col='true'
                             aria-labelledby="demo-col-radio-buttons-group-label"
                             name="col-radio-buttons-group"
                         >
-                            <FormControlLabel value="Everybody" control={<Radio color='error' size='small' />} label="Everybody" />
-                            <FormControlLabel value="My Friends" control={<Radio color='error' size='small' />} label="My Friends" />
-                            <FormControlLabel value="Nobody" control={<Radio color='error' size='small' />} label="Nobody" />
+                            <FormControlLabel value="Everybody" control={<Radio color='secondary' size='small' />} label="Everybody" />
+                            <FormControlLabel value="My Friends" control={<Radio color='secondary' size='small' />} label="My Friends" />
+                            <FormControlLabel value="Nobody" control={<Radio color='secondary' size='small' />} label="Nobody" />
                             <FormControlLabel
                                 value="Custom"
                                 disabled
-                                control={<Radio color='error' size='small' />}
+                                control={<Radio color='secondary' size='small' />}
                                 label="Custom (Premium)"
                             />
                         </RadioGroup>
+                        <Stack mt={2} spacing={2} direction='row' justifyContent='flex-end'>
+                            <Button variant='outlined' color='primary'>Create</Button>
+                            <Button variant='contained' color='error' onClick={() => setOpen(false)}>Cancel</Button>
+                        </Stack>
                     </FormControl>
                 </Box>
             </Modal>
