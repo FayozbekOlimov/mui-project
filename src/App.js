@@ -11,14 +11,14 @@ const App = () => {
 	return (
 		<>
 			<Navbar />
-			<Grid container>
-				<Grid item width={200} pr={1}>
+			<Grid container spacing={1}>
+				<Grid item width={200}>
 					<Leftbar />
 				</Grid>
-				<Grid item sx={{ width: 'calc(100% - 500px)', borderLeft: '1px solid #bdbdbd', borderRight: '1px solid #bdbdbd' }} px={1}>
+				<Grid item sx={{ width: 'calc(100% - 500px)', borderLeft: '1px solid divider', borderRight: '1px solid divider' }}>
 					<Feed />
 				</Grid>
-				<Grid item width={300} px={1}>
+				<Grid item width={300}>
 					<Rightbar />
 				</Grid>
 			</Grid>
