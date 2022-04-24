@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { styled } from '@mui/material/styles';
-import { Avatar, Box, Card, CardActions, CardHeader, CardMedia, Collapse, Divider, IconButton, InputAdornment, Rating, TextField, Typography } from '@mui/material';
-import { Favorite, FavoriteBorder, InsertCommentOutlined, Reply, ReplyOutlined, Send, ShareOutlined } from '@mui/icons-material';
+import { Avatar, Card, CardActions, CardContent, CardHeader, CardMedia, Collapse, Divider, IconButton, InputAdornment, Rating, TextField, Typography } from '@mui/material';
+import { Favorite, FavoriteBorder, InsertCommentOutlined, MoreVert, ReplyOutlined, Send } from '@mui/icons-material';
 import { red } from '@mui/material/colors';
 
 const ExpandMore = styled((props) => {
@@ -15,7 +15,7 @@ const ExpandMore = styled((props) => {
     }),
 }));
 
-export default function RecipeReviewCard() {
+export default function Post({ header, media, actions }) {
     const [expanded, setExpanded] = useState(false);
 
     const handleExpandClick = () => {
@@ -24,21 +24,31 @@ export default function RecipeReviewCard() {
 
     return (
         <Card>
-            <CardMedia
-                component="img"
-                height="194"
-                image="https://source.unsplash.com/400x300/?laptop"
-                alt="Laptop"
-            />
             <CardHeader
                 sx={{ p: 1 }}
                 avatar={
                     <Avatar sx={{ bgcolor: red[500] }}
-                        src='https://randomuser.me/api/portraits/men/30.jpg' />
+                        src={header.logo} />
                 }
-                title="Shrimp and Chorizo Paella"
-                subheader="September 14, 2016"
+                action={
+                    <IconButton aria-label="settings">
+                        <MoreVert />
+                    </IconButton>
+                }
+                title={header.name}
+                subheader={header.date}
             />
+            <CardMedia
+                component="img"
+                height="270"
+                image={media.img}
+                alt={media.alt}
+            />
+            <CardContent>
+                <Typography sx={{ typography: { sm: 'body1', xs: 'body2' } }}>
+                    {media.content}
+                </Typography>
+            </CardContent>
             <Divider />
             <CardActions disableSpacing>
                 <IconButton aria-label="add to favorites" sx={{ p: 0.5 }}>
@@ -48,11 +58,15 @@ export default function RecipeReviewCard() {
                         emptyIcon={<FavoriteBorder fontSize="inherit" />}
                     />
                 </IconButton>
-                <Typography variant='body1' p={0.5}>12</Typography>
+                <Typography variant='body1' p={0.5}>
+                    {actions.likes >= 1000 ? (actions.likes / 1000).toFixed(1) + 'K' : actions.likes}
+                </Typography>
                 <IconButton aria-label="share" sx={{ ml: 0.5, transform: 'rotateY(180deg)', p: 0.5 }}>
                     <ReplyOutlined sx={{ fontSize: '28px' }} />
                 </IconButton>
-                <Typography variant='body1' flex={1} textAlign='right' p={0.5}>75</Typography>
+                <Typography variant='body1' flex={1} textAlign='right' p={0.5}>
+                    {actions.comments >= 1000 ? (actions.comments / 1000).toFixed(1) + 'K' : actions.comments}
+                </Typography>
                 <ExpandMore
                     // expand={expanded}
                     onClick={handleExpandClick}

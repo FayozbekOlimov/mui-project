@@ -1,5 +1,6 @@
 import React from 'react'
 import { Avatar, AvatarGroup, Box, Divider, ImageList, ImageListItem, List, ListItem, ListItemAvatar, ListItemText, Typography } from '@mui/material'
+import { deepOrange } from '@mui/material/colors'
 
 const Rightbar = () => {
 	return (
@@ -9,10 +10,11 @@ const Rightbar = () => {
 				<Avatar alt="Remy Sharp" src="https://randomuser.me/api/portraits/men/1.jpg" />
 				<Avatar alt="Travis Howard" src="https://randomuser.me/api/portraits/women/2.jpg" />
 				<Avatar alt="Jim Kerry" src="" />
+				<Avatar sx={{ bgcolor: deepOrange[400] }}>C</Avatar>
 				<Avatar alt="Cindy Baker" src="https://randomuser.me/api/portraits/men/3.jpg" />
 				<Avatar alt="Agnes Walker" src="https://randomuser.me/api/portraits/women/4.jpg" />
 				<Avatar alt="Trevor Henderson" src="https://randomuser.me/api/portraits/men/5.jpg" />
-				<Avatar alt="John Doe" src="https://randomuser.me/api/portraits/women/6.jpg" />
+				<Avatar alt="Herman Bailey" src="https://randomuser.me/api/portraits/women/6.jpg" />
 			</AvatarGroup>
 			<Typography variant='h6' mt={2}>Latest Photos</Typography>
 			<ImageList sx={{ width: '100%', py: 1 }} cols={3} rowHeight={110}>

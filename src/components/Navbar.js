@@ -151,9 +151,15 @@ export default function Navbar() {
                         variant="h5"
                         noWrap
                         component="div"
+                        display={{ xs: 'none', sm: 'block' }}
                     >
-                        Fayozbek
+                        John Doe
                     </Typography>
+                    <Avatar
+                        sx={{ width: 36, height: 36, display: { xs: 'block', sm: 'none' } }}
+                        src='https://randomuser.me/api/portraits/men/90.jpg'
+                        alt='John Doe'
+                    />
                     <Search sx={{ flexGrow: 0.5, width: 0 }}>
                         <SearchIconWrapper>
                             <SearchOutlined />
@@ -163,7 +169,7 @@ export default function Navbar() {
                             inputProps={{ 'aria-label': 'search' }}
                         />
                     </Search>
-                    <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+                    <Box sx={{ display: { xs: 'none', sm: 'flex', alignItems: 'center' } }}>
                         <IconButton size="large" aria-label="show 4 new mails" color="inherit">
                             <Badge badgeContent={4} color="error">
                                 <Mail />
@@ -188,13 +194,13 @@ export default function Navbar() {
                             color="inherit"
                         >
                             <Avatar
-                                sx={{width: 36, height: 36}}
-                                src='https://randomuser.me/api/portraits/men/24.jpg' 
-                                alt='John Doe' 
+                                sx={{ width: 36, height: 36 }}
+                                src='https://randomuser.me/api/portraits/men/90.jpg'
+                                alt='John Doe'
                             />
                         </IconButton>
                     </Box>
-                    <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
+                    <Box sx={{ display: { xs: 'flex', sm: 'none' } }}>
                         <IconButton
                             size='large'
                             aria-label="show more"

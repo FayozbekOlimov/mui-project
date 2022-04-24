@@ -1,14 +1,14 @@
 import React from 'react';
 import { ListItemIcon, ListItemText, MenuItem, MenuList } from '@mui/material';
-import { Bookmark, FormatListBulletedTwoTone, Group, Home, Logout, Notifications, Person, PhotoCamera, PlayCircleOutlined, Settings, Storefront, TabletMac } from '@mui/icons-material';
+import { Bookmark, Group, Home, Logout, Notifications, Person, Settings, Storefront } from '@mui/icons-material';
 
 const Leftbar = () => {
 	return (
 		<MenuList sx={{ pt: 9, position: 'sticky', top: 0 }}>
 			{menuItemData.map((item, ind) => (
-				<MenuItem sx={{ p: 1.5 }} key={ind}>
-					<ListItemIcon>{item.icon}</ListItemIcon>
-					<ListItemText>{item.txt}</ListItemText>
+				<MenuItem sx={{ p: 0 }} key={ind}>
+					<ListItemIcon sx={{ p: 1.5 }}>{item.icon}</ListItemIcon>
+					<ListItemText sx={{ py: 1.5, display: { xs: 'none', sm: 'block' } }}>{item.txt}</ListItemText>
 				</MenuItem>
 			))}
 		</MenuList>
@@ -19,47 +19,35 @@ export default Leftbar
 
 const menuItemData = [
 	{
-		icon: <Home fontSize="small" />,
+		icon: <Home fontSize='medium' />,
 		txt: 'Homepage'
 	},
 	{
-		icon: <Person fontSize="small" />,
+		icon: <Person fontSize='medium' />,
 		txt: 'Friends'
 	},
 	{
-		icon: <Group fontSize='small' />,
+		icon: <Group fontSize='medium' />,
 		txt: 'Groups'
 	},
 	{
-		icon: <Notifications fontSize='small' />,
+		icon: <Notifications fontSize='medium' />,
 		txt: 'Notifications'
 	},
-	// {
-	// 	icon: <PhotoCamera fontSize="small" />,
-	// 	txt: 'Camera'
-	// },
-	// {
-	// 	icon: <PlayCircleOutlined fontSize="small" />,
-	// 	txt: 'Videos'
-	// },
-	// {
-	// 	icon: <TabletMac fontSize="small" />,
-	// 	txt: 'Apps'
-	// },
 	{
-		icon: <Bookmark fontSize="small" />,
+		icon: <Bookmark fontSize='medium' />,
 		txt: 'Collections'
 	},
 	{
-		icon: <Storefront fontSize="small" />,
+		icon: <Storefront fontSize='medium' />,
 		txt: 'Market place'
 	},
 	{
-		icon: <Settings fontSize="small" />,
+		icon: <Settings fontSize='medium' />,
 		txt: 'Settings'
 	},
 	{
-		icon: <Logout fontSize="small" />,
+		icon: <Logout fontSize='medium' />,
 		txt: 'Logout'
 	}
 ]
