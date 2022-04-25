@@ -17,9 +17,11 @@ const ExpandMore = styled((props) => {
 
 export default function Post({ header, media, actions }) {
     const [expanded, setExpanded] = useState(false);
+    const [value, setValue] = useState('');
 
     const handleExpandClick = () => {
         setExpanded(!expanded);
+        setValue('');
     };
 
     return (
@@ -68,7 +70,6 @@ export default function Post({ header, media, actions }) {
                     {actions.comments >= 1000 ? (actions.comments / 1000).toFixed(1) + 'K' : actions.comments}
                 </Typography>
                 <ExpandMore
-                    // expand={expanded}
                     onClick={handleExpandClick}
                     aria-expanded={expanded}
                     aria-label="show more"
@@ -79,13 +80,21 @@ export default function Post({ header, media, actions }) {
             </CardActions>
             <Collapse in={expanded} timeout="auto" unmountOnExit sx={{ p: 0 }}>
                 <TextField
+                    value={value}
+                    onChange={(e) => setValue(e.target.value)}
+                    autoFocus={expanded}
                     sx={{
                         px: 2, py: 0.5,
                         '& :before': { display: 'none' },
                     }}
                     InputProps={{
                         endAdornment: <InputAdornment position="end">
-                            <Send fontSize='small' sx={{ cursor: 'pointer' }} />
+                            <Send 
+                                fontSize='small' 
+                                color={value.trim() ? 'primary' : ''}
+                                sx={{ cursor: 'pointer' }} 
+                                onClick={() => setExpanded(false)}
+                            />
                         </InputAdornment>,
                     }}
                     variant="standard"

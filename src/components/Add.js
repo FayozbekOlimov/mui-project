@@ -27,7 +27,7 @@ export const Add = () => {
                 sx={{
                     position: 'fixed',
                     bottom: 20,
-                    right: 10
+                    left: 20
                 }}
                 onClick={() => setOpen(true)}
             >

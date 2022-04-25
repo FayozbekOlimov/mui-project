@@ -28,7 +28,7 @@ const posts = [
 		media: {
 			img: 'https://source.unsplash.com/400x300/?laptop',
 			alt: 'laptop',
-			content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus perspiciatis in maxime labore eius quidem minima fuga possimus tenetur voluptates suscipit facilis hic alias ducimus, dolorem, necessitatibus'
+			content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus perspiciatis in maxime labore eius quidem minima fuga possimus tenetur voluptates'
 		},
 		actions: {
 			likes: 12,
@@ -44,7 +44,7 @@ const posts = [
 		media: {
 			img: 'https://source.unsplash.com/400x300/?camera',
 			alt: 'camera',
-			content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus perspiciatis in maxime labore eius quidem minima fuga possimus tenetur voluptates suscipit facilis hic alias ducimus, dolorem, necessitatibus'
+			content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus perspiciatis in maximefuga possimus tenetur voluptates suscipit facilis hic alias ducimus, dolorem, necessitatibus'
 		},
 		actions: {
 			likes: 1415,
@@ -60,7 +60,7 @@ const posts = [
 		media: {
 			img: 'https://source.unsplash.com/400x300/?meal',
 			alt: 'meal',
-			content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus perspiciatis in maxime labore eius quidem minima fuga possimus tenetur voluptates suscipit facilis hic alias ducimus, dolorem, necessitatibus'
+			content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus perspiciatis in tenetur voluptates suscipit facilis hic alias ducimus, dolorem, necessitatibus'
 		},
 		actions: {
 			likes: 590,
@@ -76,7 +76,7 @@ const posts = [
 		media: {
 			img: 'https://source.unsplash.com/400x300/?shoes',
 			alt: 'shoes',
-			content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus perspiciatis in maxime labore eius quidem minima fuga possimus tenetur voluptates suscipit facilis hic alias ducimus, dolorem, necessitatibus'
+			content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus perspiciatis in maxime labore eius quidem minima fuga possimus tenetur voluptates suscipit facilis hic alias ducimus'
 		},
 		actions: {
 			likes: 984,
