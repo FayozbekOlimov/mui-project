@@ -4,7 +4,7 @@ import { deepOrange } from '@mui/material/colors'
 
 const Rightbar = () => {
 	return (
-		<Box sx={{ pt: 9 }} position='sticky' top={0}>
+		<Box sx={{ pt: 9, pl: 1, minHeight: '100vh' }} position='sticky' top={0} bgcolor='background.default' color='text.primary'>
 			<Typography variant='h6'>Online Friends</Typography>
 			<AvatarGroup max={6} sx={{ justifyContent: 'start', my: 1 }}>
 				<Avatar alt="Remy Sharp" src="https://randomuser.me/api/portraits/men/1.jpg" />
@@ -116,16 +116,16 @@ const imgData = [
 		img: 'https://images.unsplash.com/photo-1522770179533-24471fcdba45',
 		title: 'Camera',
 	},
-// 	{
-// 		img: 'https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c',
-// 		title: 'Coffee',
-// 	},
-// 	{
-// 		img: 'https://images.unsplash.com/photo-1533827432537-70133748f5c8',
-// 		title: 'Hats',
-// 	},
-// 	{
-// 		img: 'https://images.unsplash.com/photo-1558642452-9d2a7deb7f62',
-// 		title: 'Honey',
-// 	}
+	// 	{
+	// 		img: 'https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c',
+	// 		title: 'Coffee',
+	// 	},
+	// 	{
+	// 		img: 'https://images.unsplash.com/photo-1533827432537-70133748f5c8',
+	// 		title: 'Hats',
+	// 	},
+	// 	{
+	// 		img: 'https://images.unsplash.com/photo-1558642452-9d2a7deb7f62',
+	// 		title: 'Honey',
+	// 	}
 ];

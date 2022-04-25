@@ -4,7 +4,7 @@ import { Box, Grid } from '@mui/material'
 
 const Feed = () => {
 	return (
-		<Box sx={{ p: 1, pt: 9 }}>
+		<Box sx={{ p: 1, pt: 9, bgcolor: 'background.default', color: 'text.primary' }}>
 			<Grid container spacing={{ xs: 0, sm: 2 }} rowSpacing={2}>
 				{posts.map((post, index) => (
 					<Grid key={index} item xs={12} lg={6} xl={4} >
