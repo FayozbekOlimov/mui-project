@@ -8,17 +8,17 @@ import Rightbar from './components/Rightbar'
 import { Add } from './components/Add';
 
 const App = () => {
-	const [mode, setMode] = useState('dark');
+	const [mode, setMode] = useState('light');
 	const darkTheme = createTheme({
 		palette: { mode }
 	});
 
 	return (
 		<ThemeProvider theme={darkTheme}>
-			<Navbar />
+			<Navbar setMode={setMode} mode={mode} />
 			<Grid container>
 				<Grid item width={{ xs: 48, sm: 200 }}>
-					<Leftbar setMode={setMode} />
+					<Leftbar mode={mode} />
 				</Grid>
 				<Grid item sx={{
 					width: {

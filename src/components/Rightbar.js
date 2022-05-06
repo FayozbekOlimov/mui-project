@@ -3,8 +3,18 @@ import { Avatar, AvatarGroup, Box, Divider, ImageList, ImageListItem, List, List
 import { deepOrange } from '@mui/material/colors'
 
 const Rightbar = () => {
+	const boxStyle = {
+		pt: 9,
+		pl: 1,
+		minHeight: '100vh',
+		position: 'sticky',
+		top: 0,
+		bgcolor: 'background.default',
+		color: 'text.primary'
+	}
+
 	return (
-		<Box sx={{ pt: 9, pl: 1, minHeight: '100vh' }} position='sticky' top={0} bgcolor='background.default' color='text.primary'>
+		<Box sx={boxStyle} >
 			<Typography variant='h6'>Online Friends</Typography>
 			<AvatarGroup max={6} sx={{ justifyContent: 'start', my: 1 }}>
 				<Avatar alt="Remy Sharp" src="https://randomuser.me/api/portraits/men/1.jpg" />

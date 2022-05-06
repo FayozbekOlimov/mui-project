@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { styled, alpha } from '@mui/material/styles';
 import { AppBar, Avatar, Badge, Box, IconButton, InputBase, Menu, MenuItem, Toolbar, Typography } from '@mui/material';
-import { AccountCircle, Mail, MoreVertOutlined, Notifications, SearchOutlined } from '@mui/icons-material';
+import { AccountCircle, DarkMode, LightMode, Mail, MoreVertOutlined, Notifications, SearchOutlined } from '@mui/icons-material';
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -38,7 +38,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     },
 }));
 
-export default function Navbar() {
+export default function Navbar({ setMode, mode }) {
     const [anchorEl, setAnchorEl] = useState(null);
     const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
 
@@ -79,7 +79,7 @@ export default function Navbar() {
             open={isMenuOpen}
             onClose={handleMenuClose}
         >
-            <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
+            <MenuItem onClick={handleMenuClose}>My Profile</MenuItem>
             <MenuItem onClick={handleMenuClose}>My account</MenuItem>
         </Menu>
     );
@@ -138,7 +138,17 @@ export default function Navbar() {
                 >
                     <AccountCircle />
                 </IconButton>
-                <Typography variant='body1'>Profile</Typography>
+                <Typography variant='body1'>My Profile</Typography>
+            </MenuItem>
+            <MenuItem sx={{ px: 1, py: 0.5 }} onClick={() => setMode(mode => mode === 'light' ? 'dark' : 'light')}>
+                <IconButton
+                    size='medium'
+                    color='inherit'
+                    sx={{ mr: 1 }}
+                >
+                    {mode === 'light' ? <DarkMode /> : <LightMode />}
+                </IconButton>
+                <Typography variant='body1'>{mode === 'light' ? 'Dark' : 'Light'} mode</Typography>
             </MenuItem>
         </Menu>
     );
@@ -170,6 +180,9 @@ export default function Navbar() {
                         />
                     </Search>
                     <Box sx={{ display: { xs: 'none', sm: 'flex', alignItems: 'center' } }}>
+                        <IconButton size='large' color='inherit' onClick={() => setMode(mode => mode === 'light' ? 'dark' : 'light')}>
+                            {mode === 'light' ? <DarkMode /> : <LightMode />}
+                        </IconButton>
                         <IconButton size="large" aria-label="show 4 new mails" color="inherit">
                             <Badge badgeContent={4} color="error">
                                 <Mail />

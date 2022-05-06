@@ -41,6 +41,7 @@ export const Add = () => {
                 onClose={() => setOpen(false)}
                 aria-labelledby="keep-mounted-modal-title"
                 aria-describedby="keep-mounted-modal-description"
+                sx={{ color: 'text.primary' }}
             >
                 <Box sx={modalStyle} component='form' noValidate autoComplete='off'>
                     <TextField
@@ -60,7 +61,7 @@ export const Add = () => {
                         fullWidth
                         sx={{ mb: 2 }}
                     />
-                    <FormControl sx={{width: '100%'}}>
+                    <FormControl sx={{ width: '100%' }}>
                         <FormLabel id="demo-col-radio-buttons-group-label" color='info'>Who can comment?</FormLabel>
                         <RadioGroup
                             col='true'
