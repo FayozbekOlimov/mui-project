@@ -24,7 +24,7 @@ export default function Post({ header, media, actions }) {
         setValue('');
     };
 
-    return (
+    return (<>
         <Card>
             <CardHeader
                 sx={{ p: 1 }}
@@ -89,10 +89,10 @@ export default function Post({ header, media, actions }) {
                     }}
                     InputProps={{
                         endAdornment: <InputAdornment position="end">
-                            <Send 
-                                fontSize='small' 
+                            <Send
+                                fontSize='small'
                                 color={value.trim() ? 'primary' : ''}
-                                sx={{ cursor: 'pointer' }} 
+                                sx={{ cursor: 'pointer' }}
                                 onClick={() => setExpanded(false)}
                             />
                         </InputAdornment>,
@@ -104,5 +104,6 @@ export default function Post({ header, media, actions }) {
                 />
             </Collapse>
         </Card>
+    </>
     );
 }

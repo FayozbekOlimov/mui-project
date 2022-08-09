@@ -1,9 +1,23 @@
 import React, { useState } from 'react'
-import { Box, Button, Fab, FormControl, FormControlLabel, FormLabel, Modal, Radio, RadioGroup, Stack, TextField, Tooltip } from '@mui/material'
+import { Alert, Box, Button, Fab, FormControl, FormControlLabel, FormLabel, Modal, Radio, RadioGroup, Snackbar, Stack, TextField, Tooltip } from '@mui/material'
 import AddIcon from '@mui/icons-material/Add';
 
 export const Add = () => {
     const [open, setOpen] = useState(false);
+    const [openSnackbar, setOpenSnackbar] = useState(false);
+
+    const handleClose = (event, reason) => {
+        if (reason === 'clickaway') {
+            return;
+        }
+
+        setOpenSnackbar(false);
+    };
+
+    const handleClick = () => {
+        setOpen(false);
+        setOpenSnackbar(true);
+    };
 
     const modalStyle = {
         position: 'absolute',
@@ -79,12 +93,17 @@ export const Add = () => {
                             />
                         </RadioGroup>
                         <Stack mt={2} spacing={2} direction='row' justifyContent='flex-end'>
-                            <Button variant='outlined' color='primary'>Create</Button>
+                            <Button variant='outlined' color='primary' onClick={handleClick}>Create</Button>
                             <Button variant='contained' color='error' onClick={() => setOpen(false)}>Cancel</Button>
                         </Stack>
                     </FormControl>
                 </Box>
             </Modal>
+            <Snackbar open={openSnackbar} autoHideDuration={5000} onClose={handleClose}>
+                <Alert onClose={handleClose} severity='success' >
+                    Post created successfully!
+                </Alert>
+            </Snackbar>
         </>
     )
 }
